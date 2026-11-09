@@ -59,6 +59,8 @@ Le modèle est public. **Tant que la barre de progression avance, laissez la
 cellule s’exécuter.** Lors de notre essai dans Colab, le téléchargement
 avançait malgré cet avertissement et affichait un total d’environ 9,24 Go.
 
+![Capture de Colab montrant l’avertissement HF_TOKEN et le téléchargement des deux fichiers du modèle terminé à 100 %](images/telechargement-hf-token.png)
+
 Attendez le message « Modèle chargé sur cpu. » ou « Modèle chargé sur cuda. »,
 selon l’appareil choisi, avant d’exécuter la cellule de traduction. Si une
 erreur **HTTP 429** apparaît, Hugging Face a limité le nombre de requêtes.
