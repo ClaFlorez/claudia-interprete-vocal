@@ -152,11 +152,33 @@ les fichiers ont été récupérés. **« Loading weights »** indique que le
 programme charge ensuite les paramètres du modèle. Dans cet essai, la cellule
 affichait **5 min 41 s** au début du chargement des poids. Pour comparer à
 la mesure CPU de **64,09 s**, relever uniquement le **temps de génération**
-affiché par la cellule de traduction. La mesure sur T4 reste à relever.
+affiché par la cellule de traduction.
 Le notebook utilise FP32 sur CPU et FP16 sur GPU. La comparaison portera
 donc sur ces deux configurations d’exécution.
 
 ![Colab après le téléchargement des deux fichiers, au début du chargement des poids sur T4.](images/colab-chargement-t4.png)
+
+## Comparaison des temps de génération
+
+Les deux essais ont utilisé le même enregistrement (« Gracias por venir »)
+et la même langue cible, l’anglais. Le notebook a affiché « Thank you for
+coming. » et un lecteur audio dans les deux cas.
+
+| Configuration Colab | Temps de génération |
+| --- | ---: |
+| CPU, FP32 | 64,09 s |
+| T4, FP16 | 8,57 s |
+
+Dans cet essai, le temps de génération sur T4 était inférieur de **86,6 %**,
+soit **55,52 s** de moins. Les mesures excluent le téléchargement, le
+chargement et l’affichage du résultat. Il s’agit d’une mesure par
+configuration, avec une précision numérique différente entre les deux.
+
+La capture montre que l’ancienne cellule a reproduit l’IndexError sur T4.
+La cellule de récupération a affiché le résultat déjà généré et son temps
+de génération. Le notebook corrigé intègre cette étape.
+
+![Première traduction sur T4 dans Colab avec lecteur audio et temps de génération de 8,57 secondes.](images/premiere-traduction-t4.png)
 
 ## Sources de l’installation
 
