@@ -251,7 +251,7 @@ La traduction de l’exemple est restée identique et contient encore les erreur
 sur « CEP » et « Martelly ». Sur quatre paires de validation, cette variation
 de perte ne suffit pas à établir une amélioration de la traduction. Le pilote
 confirme que le programme a modifié les paramètres et a pu les réévaluer.
-L’évaluation sur les enregistrements personnels reste à faire.
+Une première comparaison sur deux enregistrements personnels est présentée ci-dessous.
 
 Les pertes des 16 étapes se rapportent à des phrases différentes. Leur
 variation d’une ligne à l’autre reflète aussi la difficulté de chaque phrase.
@@ -261,6 +261,30 @@ variation d’une ligne à l’autre reflète aussi la difficulté de chaque phr
 Après cette cellule, exécuter **« Sauvegarder le résultat »** et télécharger
 `fine_tuning_pilote.zip` depuis le panneau Fichiers. Le ZIP contient les
 poids ajustés et le rapport JSON.
+
+## Comparaison vocale avant et après le fine-tuning
+
+Le notebook 04 a utilisé les deux mêmes enregistrements personnels avec les
+poids d’origine, puis avec les quatre tenseurs ajustés. Ces enregistrements
+sont distincts des paires de FLEURS utilisées pour le fine-tuning. Le notebook
+a affiché le texte généré et un lecteur audio pour chaque version.
+
+| Phrase source | Avant le fine-tuning | Après le fine-tuning |
+| --- | --- | --- |
+| Gracias por venir. | Thank you for coming. | Thank you for coming. |
+| No puedo llegar antes de las ocho. | I can't get there before eight. | I can't get there before eight. |
+
+Les deux versions conservent le sens des deux phrases. Dans le deuxième
+exemple, « I can't » conserve la négation et « before eight » la limite
+horaire. Les textes générés sont identiques pour ces deux enregistrements.
+La capture confirme la présence des lecteurs audio. Elle ne permet pas
+d’établir si les deux signaux audio sont identiques.
+
+Ces deux exemples ne montrent pas d’amélioration de la traduction après
+l’ajustement pilote. L’évaluation à voix normale et à voix basse reste
+à réaliser avec des prises distinctes de chaque phrase.
+
+![Colab présente les deux enregistrements et les sorties du traducteur avant et après le fine-tuning.](images/comparaison-vocale-avant-apres.png)
 
 ## Sources de l’installation
 
