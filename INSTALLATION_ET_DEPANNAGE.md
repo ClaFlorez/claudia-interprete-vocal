@@ -361,6 +361,18 @@ six phrases prévues ont été testées avec un contraste de niveau confirmé.
 
 ![Les quatre traductions anglaises de la phrase sur la pharmacie et les niveaux RMS des deux prises.](images/essai-voix-basse-pharmacie.png)
 
+### Cinquième phrase testée à voix normale et basse
+
+Pour « No olvides llevar el pasaporte », le niveau RMS était de
+**−25,6 dBFS** à voix normale et de **−33,6 dBFS** à voix basse. La prise
+basse était donc **8,0 dB** plus faible.
+
+Les quatre sorties ont donné « Don't forget to bring your passport. »
+Elles ont conservé la consigne de ne pas oublier le passeport. Cinq des
+six phrases prévues ont été testées avec un contraste de niveau confirmé.
+
+![Les quatre traductions anglaises de la phrase sur le passeport et les niveaux RMS des deux prises.](images/essai-voix-basse-passeport.png)
+
 ## Démonstration espagnol vers français
 
 Avec les poids d’origine et la langue cible `fra`, le traducteur a traité
@@ -394,6 +406,16 @@ La phrase espagnole isolée permet les deux lectures. Cette observation
 concerne la démonstration vers le français.
 
 ![Colab affiche la traduction française qui utilise « banc » et le lecteur audio.](images/demo-pharmacie-francais.png)
+
+### Choix du verbe pour le passeport
+
+Pour « No olvides llevar el pasaporte », le modèle a affiché « n'oubliez
+pas de porter le passeport. » La consigne reste compréhensible. Dans ce
+contexte, **« N’oublie pas d’emporter ton passeport. »** rend plus
+naturellement l’idée de prendre le passeport avec soi et conserve le
+tutoiement de la phrase espagnole.
+
+![Colab affiche la traduction française de la phrase sur le passeport et son lecteur audio.](images/demo-passeport-francais.png)
 
 ## Sources de l’installation
 
