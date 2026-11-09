@@ -127,6 +127,37 @@ sur GPU avec le même fichier.
 
 ![Première traduction espagnol-anglais dans Colab avec lecteur audio et temps de génération de 64,09 secondes.](images/premiere-traduction-cpu.png)
 
+## Passer du CPU à la GPU T4 dans Colab
+
+1. Dans Colab, ouvrir **Runtime → Change runtime type**. Garder **Python 3**,
+   sélectionner **T4 GPU** et cliquer sur **Save**.
+2. Dans la nouvelle session, relancer la cellule d’installation et remettre le
+   fichier audio dans l’environnement. Pour la comparaison, utiliser la même
+   phrase et conserver `tgt_lang = "eng"`.
+3. Dans **« Charger le Transformer »**, mettre `use_gpu = True` et exécuter
+   la cellule. Attendre **« Modèle chargé sur cuda. »** avant de lancer
+   **« Traduire et écouter »**.
+
+![Fenêtre Colab avec T4 GPU sélectionnée et le bouton Save.](images/colab-selection-t4.png)
+
+Le passage à la T4 a ouvert une nouvelle machine virtuelle. Les fichiers du
+modèle se trouvaient dans le cache du disque temporaire de la session CPU.
+Comme la nouvelle session n’avait pas ce cache, elle a téléchargé les mêmes
+fichiers sur son propre disque. Les fichiers temporaires de Colab disparaissent
+quand leur machine virtuelle est supprimée. Le notebook sauvegardé et le fichier
+audio original restent à leur emplacement. [FAQ de Google Colab](https://research.google.com/colaboratory/faq.html)
+
+La capture montre deux étapes. **« Fetching 2 files: 100% »** confirme que
+les fichiers ont été récupérés. **« Loading weights »** indique que le
+programme charge ensuite les paramètres du modèle. Dans cet essai, la cellule
+affichait **5 min 41 s** au début du chargement des poids. Pour comparer à
+la mesure CPU de **64,09 s**, relever uniquement le **temps de génération**
+affiché par la cellule de traduction. La mesure sur T4 reste à relever.
+Le notebook utilise FP32 sur CPU et FP16 sur GPU. La comparaison portera
+donc sur ces deux configurations d’exécution.
+
+![Colab après le téléchargement des deux fichiers, au début du chargement des poids sur T4.](images/colab-chargement-t4.png)
+
 ## Sources de l’installation
 
 Les versions installées et les conflits proviennent des journaux pip.
