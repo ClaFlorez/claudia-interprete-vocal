@@ -4,15 +4,15 @@ Travail pratique de Machine Learning. Le projet traduit de courtes phrases
 parlées entre le français, l’anglais et l’espagnol et produit un audio que
 l’on peut écouter.
 
-## Programme prévu
+## Programme
 
-Le notebook Python utilisera le Transformer préentraîné SeamlessM4T v2.
-Il chargera un extrait audio, le préparera en mono à 16 kHz, sélectionnera
-la langue cible et fera écouter la traduction produite.
+Le notebook Python utilise le Transformer préentraîné SeamlessM4T v2.
+Il charge un extrait audio, le prépare en mono à 16 kHz, sélectionne
+la langue cible et fait écouter la traduction produite.
 
-Le fine-tuning supervisé portera sur la traduction de la parole espagnole
-vers le texte anglais. La synthèse vocale utilisera les paramètres préentraînés.
-Le français fera partie de la démonstration avec le modèle préentraîné.
+Le fine-tuning supervisé pilote a porté sur la traduction de la parole
+espagnole vers le texte anglais. La synthèse vocale utilise les paramètres
+préentraînés. Le français est aussi testé avec le modèle préentraîné.
 
 ## Données et évaluation
 
@@ -22,19 +22,19 @@ Le français fera partie de la démonstration avec le modèle préentraîné.
 - **Entraînement et validation** — Enregistrements en espagnol et traductions
   écrites correspondantes en anglais, issus des partitions distinctes de FLEURS.
 - **Test final** — Six phrases originales en espagnol enregistrées à voix
-  normale et à voix basse, soit douze audios. Les mêmes fichiers serviront à
+  normale et à voix basse, soit douze audios. Les mêmes fichiers ont servi à
   comparer le modèle préentraîné et le modèle ajusté.
-- **Mesures** — Fidélité du sens par rapport à une traduction de référence
-  et temps médian de génération de l’audio après chargement du modèle.
+- **Résultat** — Pour chacune des deux versions du modèle, le sens a été
+  conservé dans les six prises normales et dans cinq des six prises à voix
+  basse. Un essai distinct a mesuré le temps de génération sur CPU et sur T4.
+  [Protocole, résultats et captures](INSTALLATION_ET_DEPANNAGE.md)
 
 ## Livrables
 
-- [ ] Notebook de démonstration et instructions d’exécution.
-- [ ] Code d’ajustement fin et protocole reproductible.
-- [ ] Exemple de démonstration, source des données et résultats mesurés.
+- [x] Notebook de démonstration et instructions d’exécution.
+- [x] Code de fine-tuning et protocole du pilote.
+- [x] Exemple de démonstration, source des données et résultats mesurés.
 - [ ] Diapositives et synthèse d’une à deux pages.
-
-Le notebook, l’ajustement fin et les mesures sont à réaliser.
 
 ## Sources
 
