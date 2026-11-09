@@ -21,8 +21,8 @@ de Transformers 5.22.1 (1.31) et celui de Gradio et Gradio Client (1.16).
 La ligne « Successfully installed » confirme que pip a installé les paquets
 demandés. La vérification de l’ensemble des paquets de l’environnement se fait
 avec pip check. À ce stade, les captures montrent des conflits d’installation.
-Le chargement sur CPU a ensuite été confirmé dans Colab. La traduction réelle
-et le fine-tuning restent à vérifier.
+Le chargement sur CPU et la première traduction ont ensuite été confirmés
+dans Colab. Le fine-tuning reste à réaliser.
 
 ## Reprendre dans Jupyter ou Colab
 
@@ -108,6 +108,24 @@ print(translation)
 print(f"Temps de génération — {elapsed:.2f} s")
 display(Audio(translated_audio, rate=model.config.sampling_rate))
 ~~~
+
+## Première traduction confirmée dans Colab
+
+Après la correction de l’affichage, le notebook a affiché la traduction et
+le lecteur audio à partir du résultat déjà généré.
+
+| Élément | Résultat observé |
+| --- | --- |
+| Phrase source | « Gracias por venir » |
+| Traduction générée | « Thank you for coming. » |
+| Modèle et appareil | SeamlessM4T v2 préentraîné, sur CPU dans Colab |
+| Temps de génération | 64,09 secondes, hors chargement du modèle |
+
+La sortie écrite correspond à la traduction de référence. Ce temps est la
+mesure d’un seul essai et servira de point de comparaison pour une exécution
+sur GPU avec le même fichier.
+
+![Première traduction espagnol-anglais dans Colab avec lecteur audio et temps de génération de 64,09 secondes.](images/premiere-traduction-cpu.png)
 
 ## Sources de l’installation
 
