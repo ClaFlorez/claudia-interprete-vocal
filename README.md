@@ -10,7 +10,7 @@ Le notebook Python utilisera le Transformer préentraîné SeamlessM4T v2.
 Il chargera un extrait audio, le préparera en mono à 16 kHz, sélectionnera
 la langue cible et fera écouter la traduction produite.
 
-L’ajustement fin supervisé portera sur la traduction de la parole espagnole
+Le fine-tuning supervisé portera sur la traduction de la parole espagnole
 vers le texte anglais. La synthèse vocale utilisera les paramètres préentraînés.
 Le français fera partie de la démonstration avec le modèle préentraîné.
 
