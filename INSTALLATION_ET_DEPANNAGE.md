@@ -281,10 +281,32 @@ La capture confirme la présence des lecteurs audio. Elle ne permet pas
 d’établir si les deux signaux audio sont identiques.
 
 Ces deux exemples ne montrent pas d’amélioration de la traduction après
-l’ajustement pilote. L’évaluation à voix normale et à voix basse reste
-à réaliser avec des prises distinctes de chaque phrase.
+l’ajustement pilote. Un premier essai avec deux niveaux de voix est présenté
+ci-dessous.
 
 ![Colab présente les deux enregistrements et les sorties du traducteur avant et après le fine-tuning.](images/comparaison-vocale-avant-apres.png)
+
+## Premier essai à deux niveaux de voix
+
+La phrase « No puedo llegar antes de las ocho » a été enregistrée deux
+fois. Les deux versions du modèle ont produit « I can't get there before
+eight. » pour chacune des prises. Le texte conserve la négation et la limite
+horaire dans les quatre sorties.
+
+| Prise | Niveau RMS enregistré |
+| --- | ---: |
+| Voix normale | −35,0 dBFS |
+| Voix basse | −27,8 dBFS |
+
+En dBFS, un niveau plus proche de zéro correspond à un signal plus fort.
+La prise étiquetée « voix basse » était donc plus forte de **7,2 dB** sur
+l’ensemble du fichier. Les quatre sorties montrent que le modèle a traduit
+les deux prises. Pour étudier l’effet d’un niveau plus faible, il faudra
+refaire les prises et vérifier que la prise basse a un RMS plus négatif.
+Il faut garder le même micro et la même distance, avec des silences
+comparables au début et à la fin.
+
+![Résultats Colab montrant les quatre traductions et les niveaux RMS mesurés sur les deux prises.](images/premier-essai-niveau-voix.png)
 
 ## Sources de l’installation
 
