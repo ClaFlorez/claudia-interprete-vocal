@@ -322,6 +322,20 @@ capture permet de vérifier les textes et la présence des lecteurs.
 
 ![Deuxième essai avec des niveaux RMS de −28,1 et −38,4 dBFS et les quatre traductions affichées.](images/essai-voix-basse-confirme.png)
 
+### Deuxième phrase testée à voix normale et basse
+
+Pour « Necesito dos boletos para mañana », le niveau RMS était de
+**−26,0 dBFS** à voix normale et de **−36,9 dBFS** à voix basse. La prise
+basse était donc **10,9 dB** plus faible.
+
+Les quatre traductions affichées étaient « I need two tickets for
+tomorrow. » Le modèle a conservé la quantité (« two tickets ») et
+l’indication de temps (« tomorrow ») dans les deux prises, avant et après
+le fine-tuning. Deux des six phrases prévues ont maintenant été testées
+avec un contraste de niveau confirmé.
+
+![Les quatre traductions de la phrase sur les billets et les niveaux RMS de −26,0 et −36,9 dBFS.](images/essai-voix-basse-billets.png)
+
 ## Sources de l’installation
 
 Les versions installées et les conflits proviennent des journaux pip.
