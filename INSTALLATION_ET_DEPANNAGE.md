@@ -336,6 +336,18 @@ avec un contraste de niveau confirmé.
 
 ![Les quatre traductions de la phrase sur les billets et les niveaux RMS de −26,0 et −36,9 dBFS.](images/essai-voix-basse-billets.png)
 
+## Démonstration espagnol vers français
+
+Avec les poids d’origine et la langue cible `fra`, le traducteur a traité
+la prise normale « Necesito dos boletos para mañana ». Il a affiché
+**« J’ai besoin de deux billets pour demain. »** et généré un audio en
+français. La traduction conserve la quantité et le jour.
+
+Cet exemple illustre une autre direction de traduction. L’évaluation du
+fine-tuning porte sur la direction espagnol → anglais.
+
+![Colab affiche la traduction française de la phrase sur les billets et son lecteur audio.](images/demo-espagnol-francais.png)
+
 ## Sources de l’installation
 
 Les versions installées et les conflits proviennent des journaux pip.
