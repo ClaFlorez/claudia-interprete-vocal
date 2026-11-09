@@ -11,7 +11,12 @@ anglaise et mesurer le temps de génération avant le fine-tuning.
 | --- | --- | --- |
 | Installer Transformers 4.57.1 avec la première version du notebook | pip a remplacé Transformers 5.22.1 et installé Hugging Face Hub 0.36.2. | Gradio 6.31.0 et Gradio Client 2.7.2 demandent Hub 1.16 ou plus. Diffusers 0.42.1 demande Hub 1.32 ou plus. |
 | Rétablir Transformers 5.22.1 avec Hub ≥ 1.32 et < 3 | pip a installé Hub 2.4.0 et a signalé un nouveau conflit. | Datasets 4.8.5, déjà installé dans l’environnement, exige Hub < 2. |
-| Conserver Transformers 5.22.1 et limiter Hub à ≥ 1.32 et < 2 | Plage compatible avec les contraintes relevées dans les deux captures. Installation à confirmer dans le noyau utilisé pour le notebook. | Le minimum vient de Diffusers et le maximum vient de Datasets. Transformers 5.22.1 accepte aussi cette plage. |
+| Conserver Transformers 5.22.1 et limiter Hub à ≥ 1.32 et < 2 | pip a désinstallé Hub 2.4.0 et installé Hub 1.33.0 avec succès. | Le minimum vient de Diffusers et le maximum vient de Datasets. Transformers et Gradio acceptent aussi cette plage. |
+
+Le résolveur devait trouver une version commune. Diffusers exige au moins
+la version 1.32 et Datasets exige une version strictement inférieure à 2.
+La version 1.33.0 respecte ces deux limites. Elle respecte aussi le minimum
+de Transformers 5.22.1 (1.31) et celui de Gradio et Gradio Client (1.16).
 
 La ligne « Successfully installed » confirme que pip a installé les paquets
 demandés. La vérification de l’ensemble des paquets de l’environnement se fait
@@ -46,10 +51,10 @@ Le chargement du modèle, la traduction réelle et le fine-tuning restent à vé
 5. Noter la traduction réellement produite, vérifier le sens en écoutant
    l’audio et relever le temps de génération affiché.
 
-Les versions installées et les conflits des deux premiers essais proviennent
-des journaux pip. Les contraintes de Transformers et l’existence de la version
-Hub 1.32.0 sont documentées par les éditeurs.
+Les versions installées et les conflits proviennent des journaux pip.
+Les éditeurs documentent les contraintes de Transformers et la publication
+de Hub 1.33.0.
 
 - [Dépendances de Transformers 5.22.1](https://github.com/huggingface/transformers/blob/v5.22.1/setup.py)
-- [Hugging Face Hub 1.32.0 sur PyPI](https://pypi.org/project/huggingface-hub/1.32.0/)
+- [Versions de Hugging Face Hub sur PyPI](https://pypi.org/project/huggingface-hub/#history)
 - [Documentation de pip check](https://pip.pypa.io/en/stable/cli/pip_check/)
