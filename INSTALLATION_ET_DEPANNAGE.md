@@ -308,6 +308,20 @@ comparables au début et à la fin.
 
 ![Résultats Colab montrant les quatre traductions et les niveaux RMS mesurés sur les deux prises.](images/premier-essai-niveau-voix.png)
 
+### Deuxième prise avec un contraste mesuré
+
+La même phrase a été réenregistrée. Le niveau RMS était de **−28,1 dBFS**
+pour la voix normale et de **−38,4 dBFS** pour la voix basse, soit **10,3 dB
+de moins** pour la prise basse. Les niveaux enregistrés correspondent
+cette fois aux conditions prévues.
+
+Les deux versions ont produit « I can't get there before eight. » dans
+les deux conditions. La négation et l’heure limite ont été conservées dans
+les quatre textes. Ce résultat décrit une phrase et deux prises. La
+capture permet de vérifier les textes et la présence des lecteurs.
+
+![Deuxième essai avec des niveaux RMS de −28,1 et −38,4 dBFS et les quatre traductions affichées.](images/essai-voix-basse-confirme.png)
+
 ## Sources de l’installation
 
 Les versions installées et les conflits proviennent des journaux pip.
