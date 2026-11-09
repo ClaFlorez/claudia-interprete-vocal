@@ -349,6 +349,18 @@ avec un contraste de niveau confirmé.
 
 ![Les quatre traductions anglaises de la phrase sur le train et les niveaux RMS des deux prises.](images/essai-voix-basse-train.png)
 
+### Quatrième phrase testée à voix normale et basse
+
+Pour « La farmacia está al lado del banco », le niveau RMS était de
+**−26,7 dBFS** à voix normale et de **−34,4 dBFS** à voix basse. La prise
+basse était donc **7,7 dB** plus faible.
+
+Les quatre sorties ont donné « The pharmacy is next to the bank. »
+Elles ont conservé les deux lieux et leur relation spatiale. Quatre des
+six phrases prévues ont été testées avec un contraste de niveau confirmé.
+
+![Les quatre traductions anglaises de la phrase sur la pharmacie et les niveaux RMS des deux prises.](images/essai-voix-basse-pharmacie.png)
+
 ## Démonstration espagnol vers français
 
 Avec les poids d’origine et la langue cible `fra`, le traducteur a traité
