@@ -86,6 +86,11 @@ terminée. Lancez ensuite la cellule **« Traduire et écouter »**.
 
 ## IndexError après la génération de l’audio
 
+Colab a affiché `IndexError: invalid index of a 0-dim tensor` sur la ligne
+`result.waveform_lengths[0].item()`.
+
+![Capture de Colab avec l’IndexError et la ligne qui tente de lire l’indice 0.](images/indexerror-longueur-audio.png)
+
 Dans Colab, SeamlessM4T a renvoyé la longueur de l’audio sous la forme d’un
 tenseur scalaire, c’est-à-dire une seule valeur sans dimension. L’ancienne
 cellule essayait d’en lire le premier élément avec [0], ce qui provoquait
