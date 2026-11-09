@@ -373,6 +373,33 @@ six phrases prévues ont été testées avec un contraste de niveau confirmé.
 
 ![Les quatre traductions anglaises de la phrase sur le passeport et les niveaux RMS des deux prises.](images/essai-voix-basse-passeport.png)
 
+### Sixième phrase testée à voix normale et basse
+
+Pour « Gracias por venir », le niveau RMS était de **−27,7 dBFS** à voix
+normale et de **−40,1 dBFS** à voix basse, soit un écart de **12,4 dB**.
+À voix normale, les deux versions ont produit « Thank you for coming. »
+À voix basse, elles ont produit « Thank you, Dad. » Le remerciement est
+conservé, mais le modèle supprime la raison du remerciement et ajoute
+« Dad », qui ne figure pas dans la phrase source.
+
+![Les deux versions traduisent correctement la prise normale et produisent « Thank you, Dad. » à voix basse.](images/essai-voix-basse-merci.png)
+
+### Bilan sur les six phrases
+
+La fidélité du sens a été évaluée à partir des textes de traduction affichés.
+Les deux versions ont produit le même texte pour chacune des douze prises.
+
+| Condition | Sens conservé avant le fine-tuning | Sens conservé après le fine-tuning |
+| --- | ---: | ---: |
+| Voix normale | 6 sur 6 | 6 sur 6 |
+| Voix basse | 5 sur 6 | 5 sur 6 |
+| Total | 11 sur 12 | 11 sur 12 |
+
+Le fine-tuning pilote n’a pas changé les traductions écrites de cet essai.
+La seule erreur de sens est apparue dans une prise à voix basse. Les résultats
+portent sur une voix, un micro et six phrases. Ils ne permettent pas de fixer
+un seuil sonore ni d’isoler le volume comme cause de cette erreur.
+
 ## Démonstration espagnol vers français
 
 Avec les poids d’origine et la langue cible `fra`, le traducteur a traité
@@ -416,6 +443,15 @@ naturellement l’idée de prendre le passeport avec soi et conserve le
 tutoiement de la phrase espagnole.
 
 ![Colab affiche la traduction française de la phrase sur le passeport et son lecteur audio.](images/demo-passeport-francais.png)
+
+### Formulation du remerciement
+
+Pour « Gracias por venir », le modèle a affiché « Merci pour venir. » Le
+message reste compréhensible. En français, **« Merci d’être venu. »** ou
+**« Merci d’être venue. »**, selon la personne, exprime naturellement le
+remerciement pour sa présence.
+
+![Colab affiche « Merci pour venir. » et le lecteur audio français.](images/demo-merci-francais.png)
 
 ## Sources de l’installation
 
