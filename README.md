@@ -40,4 +40,4 @@ Le notebook, l’ajustement fin et les mesures sont à réaliser.
 
 - [SeamlessM4T v2 — Meta](https://huggingface.co/facebook/seamless-m4t-v2-large)
 - [FLEURS — Google](https://huggingface.co/datasets/google/fleurs)
-- [Guide d’ajustement fin — Meta](https://github.com/facebookresearch/seamless_communication/tree/main/src/seamless_communication/cli/m4t/finetune)
+- [Guide fine-tuning — Meta](https://github.com/facebookresearch/seamless_communication/tree/main/src/seamless_communication/cli/m4t/finetune)
