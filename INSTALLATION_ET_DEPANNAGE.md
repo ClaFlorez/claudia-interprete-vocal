@@ -216,6 +216,25 @@ comparer les temps de deux configurations, on utilise le même fichier audio.
 
 ![Deuxième traduction espagnol-anglais sur T4 avec lecteur audio et un temps de génération de 3,06 secondes.](images/deuxieme-traduction-t4.png)
 
+## Validation avant le fine-tuning
+
+Le notebook 03 a évalué le modèle préentraîné sur les quatre paires de
+validation de FLEURS. La perte moyenne était de **1,3135**. Cette valeur
+mesure l’écart entre les prédictions du modèle et les unités de texte de
+référence. Elle sert de point de comparaison pour la mesure après le
+fine-tuning sur les quatre mêmes exemples.
+
+| Élément | Texte |
+| --- | --- |
+| Référence | It is Martelly's fifth CEP in four years. |
+| Prédiction avant le fine-tuning | In four years, he's the fifth Sept of Martelli. |
+
+La prédiction conserve « four years », mais rend « CEP » par « Sept »,
+change « Martelly » en « Martelli » et transforme la relation entre la
+personne et le CEP. Le sens de la phrase est donc altéré.
+
+![Colab affiche une perte de validation de 1,3135, la traduction de référence et la prédiction du modèle préentraîné.](images/validation-avant-fine-tuning.png)
+
 ## Sources de l’installation
 
 Les versions installées et les conflits proviennent des journaux pip.
