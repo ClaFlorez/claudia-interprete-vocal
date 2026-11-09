@@ -84,6 +84,26 @@ terminée. Lancez ensuite la cellule **« Traduire et écouter »**.
 
 ![Rapport de Colab avec les poids supplémentaires de text_encoder et le message Modèle chargé sur cpu.](images/modele-charge-cpu.png)
 
+## IndexError après la génération de l’audio
+
+Dans Colab, SeamlessM4T a renvoyé la longueur de l’audio sous la forme d’un
+tenseur scalaire, c’est-à-dire une seule valeur sans dimension. L’ancienne
+cellule essayait d’en lire le premier élément avec [0], ce qui provoquait
+une erreur après la génération. Le notebook traite une seule phrase et
+lit maintenant cette valeur avec item().
+
+Si le noyau est toujours actif après cette erreur, la variable result
+contient déjà le résultat. Il suffit d’exécuter les lignes d’affichage
+corrigées dans une nouvelle cellule.
+
+~~~python
+length = result.waveform_lengths.item()
+translated_audio = result.waveform.reshape(-1)[:length].float().cpu().numpy()
+print(translation)
+print(f"Temps de génération — {elapsed:.2f} s")
+display(Audio(translated_audio, rate=model.config.sampling_rate))
+~~~
+
 ## Sources de l’installation
 
 Les versions installées et les conflits proviennent des journaux pip.
