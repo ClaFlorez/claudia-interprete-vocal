@@ -22,7 +22,7 @@ La ligne « Successfully installed » confirme que pip a installé les paquets
 demandés. La vérification de l’ensemble des paquets de l’environnement se fait
 avec pip check. À ce stade, les captures montrent des conflits d’installation.
 Le chargement sur CPU et la première traduction ont ensuite été confirmés
-dans Colab. Le fine-tuning reste à réaliser.
+dans Colab. Le fine-tuning pilote a également été exécuté sur T4.
 
 ## Reprendre dans Jupyter ou Colab
 
@@ -234,6 +234,33 @@ change « Martelly » en « Martelli » et transforme la relation entre la
 personne et le CEP. Le sens de la phrase est donc altéré.
 
 ![Colab affiche une perte de validation de 1,3135, la traduction de référence et la prédiction du modèle préentraîné.](images/validation-avant-fine-tuning.png)
+
+## Résultat du fine-tuning pilote
+
+Le notebook 03 a terminé les **16 étapes** sur les 16 paires
+d’entraînement. Les **quatre tenseurs modifiés** correspondent aux poids
+et aux biais des deux projections sélectionnées dans le décodeur.
+
+| Indicateur | Avant | Après |
+| --- | --- | --- |
+| Perte moyenne sur les quatre mêmes paires de validation | 1,3135 | 1,3129 |
+| Traduction de l’exemple affiché | In four years, he's the fifth Sept of Martelli. | In four years, he's the fifth Sept of Martelli. |
+
+La perte de validation a diminué de **0,0006** d’après les valeurs affichées.
+La traduction de l’exemple est restée identique et contient encore les erreurs
+sur « CEP » et « Martelly ». Sur quatre paires de validation, cette variation
+de perte ne suffit pas à établir une amélioration de la traduction. Le pilote
+confirme que le programme a modifié les paramètres et a pu les réévaluer.
+L’évaluation sur les enregistrements personnels reste à faire.
+
+Les pertes des 16 étapes se rapportent à des phrases différentes. Leur
+variation d’une ligne à l’autre reflète aussi la difficulté de chaque phrase.
+
+![Colab affiche les 16 étapes du fine-tuning, les quatre tenseurs modifiés et les résultats avant et après.](images/resultats-fine-tuning-pilote.png)
+
+Après cette cellule, exécuter **« Sauvegarder le résultat »** et télécharger
+`fine_tuning_pilote.zip` depuis le panneau Fichiers. Le ZIP contient les
+poids ajustés et le rapport JSON.
 
 ## Sources de l’installation
 
