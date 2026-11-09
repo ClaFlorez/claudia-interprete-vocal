@@ -383,6 +383,18 @@ train, « part » convient mieux que « sort ». Dans cette formulation,
 
 ![Colab affiche « Le train sort à sept et demi. » et le lecteur audio français.](images/demo-train-francais.png)
 
+### Ambiguïté du mot « banco »
+
+Pour « La farmacia está al lado del banco », le modèle a produit
+« La pharmacie est au côté du banc. » Il a choisi le sens de siège pour
+« banco ». Dans cet exemple, la référence visait l’établissement financier.
+La traduction attendue est **« La pharmacie est à côté de la banque. »**
+La sortie conserve la relation spatiale, mais change le point de repère.
+La phrase espagnole isolée permet les deux lectures. Cette observation
+concerne la démonstration vers le français.
+
+![Colab affiche la traduction française qui utilise « banc » et le lecteur audio.](images/demo-pharmacie-francais.png)
+
 ## Sources de l’installation
 
 Les versions installées et les conflits proviennent des journaux pip.
