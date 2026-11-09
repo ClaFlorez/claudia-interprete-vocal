@@ -158,6 +158,26 @@ donc sur ces deux configurations d’exécution.
 
 ![Colab après le téléchargement des deux fichiers, au début du chargement des poids sur T4.](images/colab-chargement-t4.png)
 
+## Matériel utilisé
+
+| Environnement | Matériel | Rôle dans le projet |
+| --- | --- | --- |
+| Colab en mode CPU | Processeur de la machine virtuelle. Son modèle et sa RAM n’ont pas été relevés pour cet essai. | Premier essai de traduction en FP32. |
+| Colab en mode GPU | NVIDIA T4 avec 16 Go de mémoire vidéo GDDR6 selon la fiche du fabricant. | Deuxième essai de traduction avec CUDA et des poids chargés en FP16. |
+| Ordinateur personnel | Intel Core i7-4770K à 3,50 GHz et NVIDIA GeForce GTX 1080 avec 8 Gio de mémoire vidéo, identifiés sous Windows. | Préparation du projet et accès à Colab. Les deux temps de génération ont été mesurés sur les machines virtuelles de Colab. |
+
+Le CPU est le processeur généraliste. La T4 possède des unités conçues pour
+effectuer en parallèle les calculs matriciels utilisés par le Transformer.
+Le notebook utilise des nombres sur 32 bits (FP32) sur CPU et sur 16 bits
+(FP16) pour les poids chargés sur GPU. Le FP16 réduit l’espace nécessaire
+pour stocker ces poids en mémoire. La comparaison combine donc un changement
+de matériel et un changement de précision. [Fiche technique de la NVIDIA T4](https://www.nvidia.com/fr-fr/data-center/tesla-t4/)
+
+Pour relever le matériel lors d’une prochaine exécution, lancer `!lscpu`
+dans une cellule Colab. Avec une GPU activée, utiliser
+`!nvidia-smi --query-gpu=name,memory.total --format=csv` pour afficher
+son nom et la mémoire vidéo visible par la session.
+
 ## Comparaison des temps de génération
 
 Les deux essais ont utilisé le même enregistrement (« Gracias por venir »)
