@@ -21,7 +21,8 @@ de Transformers 5.22.1 (1.31) et celui de Gradio et Gradio Client (1.16).
 La ligne « Successfully installed » confirme que pip a installé les paquets
 demandés. La vérification de l’ensemble des paquets de l’environnement se fait
 avec pip check. À ce stade, les captures montrent des conflits d’installation.
-Le chargement du modèle, la traduction réelle et le fine-tuning restent à vérifier.
+Le chargement sur CPU a ensuite été confirmé dans Colab. La traduction réelle
+et le fine-tuning restent à vérifier.
 
 ## Reprendre dans Jupyter ou Colab
 
@@ -69,6 +70,19 @@ jeton Hugging Face pour bénéficier des limites d’un compte connecté. Gardez
 le jeton dans les secrets de Colab si vous utilisez cet environnement.
 
 [Limites de requêtes sur Hugging Face Hub](https://huggingface.co/docs/hub/rate-limits)
+
+## Rapport de chargement du modèle
+
+Dans cet essai, les lignes `UNEXPECTED` concernent les poids de
+`text_encoder`. Le modèle complet contient un encodeur de texte, tandis
+que la classe `SeamlessM4Tv2ForSpeechToSpeech` reçoit de l’audio et utilise
+un encodeur vocal. Ces poids supplémentaires sont donc attendus dans ce
+cas précis. [Architecture de SeamlessM4T v2](https://huggingface.co/docs/transformers/model_doc/seamless_m4t_v2)
+
+**« Modèle chargé sur cpu. »** confirme que la cellule de chargement est
+terminée. Lancez ensuite la cellule **« Traduire et écouter »**.
+
+![Rapport de Colab avec les poids supplémentaires de text_encoder et le message Modèle chargé sur cpu.](images/modele-charge-cpu.png)
 
 ## Sources de l’installation
 
