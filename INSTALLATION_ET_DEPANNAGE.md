@@ -51,6 +51,25 @@ Le chargement du modèle, la traduction réelle et le fine-tuning restent à vé
 5. Noter la traduction réellement produite, vérifier le sens en écoutant
    l’audio et relever le temps de génération affiché.
 
+## Avertissement HF_TOKEN au premier téléchargement
+
+Si le notebook affiche « You are sending unauthenticated requests to the HF
+Hub », le téléchargement se fait sans connexion à un compte Hugging Face.
+Le modèle est public. **Tant que la barre de progression avance, laissez la
+cellule s’exécuter.** Lors de notre essai dans Colab, le téléchargement
+avançait malgré cet avertissement et affichait un total d’environ 9,24 Go.
+
+Attendez le message « Modèle chargé sur cpu. » ou « Modèle chargé sur cuda. »,
+selon l’appareil choisi, avant d’exécuter la cellule de traduction. Si une
+erreur **HTTP 429** apparaît, Hugging Face a limité le nombre de requêtes.
+Laissez le téléchargement reprendre après le délai indiqué ou utilisez un
+jeton Hugging Face pour bénéficier des limites d’un compte connecté. Gardez
+le jeton dans les secrets de Colab si vous utilisez cet environnement.
+
+[Limites de requêtes sur Hugging Face Hub](https://huggingface.co/docs/hub/rate-limits)
+
+## Sources de l’installation
+
 Les versions installées et les conflits proviennent des journaux pip.
 Les éditeurs documentent les contraintes de Transformers et la publication
 de Hub 1.33.0.
