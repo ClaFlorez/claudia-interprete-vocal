@@ -336,6 +336,19 @@ avec un contraste de niveau confirmé.
 
 ![Les quatre traductions de la phrase sur les billets et les niveaux RMS de −26,0 et −36,9 dBFS.](images/essai-voix-basse-billets.png)
 
+### Troisième phrase testée à voix normale et basse
+
+Pour « El tren sale a las siete y media », le niveau RMS était de
+**−26,4 dBFS** à voix normale et de **−36,7 dBFS** à voix basse. La prise
+basse était donc **10,3 dB** plus faible.
+
+Les quatre sorties ont donné « The train leaves at half past seven. »
+La traduction a conservé le départ du train et l’heure dans les deux prises,
+avant et après le fine-tuning. Trois des six phrases prévues ont été testées
+avec un contraste de niveau confirmé.
+
+![Les quatre traductions anglaises de la phrase sur le train et les niveaux RMS des deux prises.](images/essai-voix-basse-train.png)
+
 ## Démonstration espagnol vers français
 
 Avec les poids d’origine et la langue cible `fra`, le traducteur a traité
@@ -347,6 +360,16 @@ Cet exemple illustre une autre direction de traduction. L’évaluation du
 fine-tuning porte sur la direction espagnol → anglais.
 
 ![Colab affiche la traduction française de la phrase sur les billets et son lecteur audio.](images/demo-espagnol-francais.png)
+
+### Autre exemple en français
+
+Pour la phrase sur le train, le modèle a affiché « Le train sort à sept et
+demi. » Le sens général et l’heure restent reconnaissables. Une formulation
+naturelle est **« Le train part à sept heures et demie. »** Pour un départ de
+train, « part » convient mieux que « sort ». Dans cette formulation,
+« demie » s’accorde avec « heure ».
+
+![Colab affiche « Le train sort à sept et demi. » et le lecteur audio français.](images/demo-train-francais.png)
 
 ## Sources de l’installation
 
