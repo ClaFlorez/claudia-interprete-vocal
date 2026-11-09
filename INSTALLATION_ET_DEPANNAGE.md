@@ -200,6 +200,22 @@ de génération. Le notebook corrigé intègre cette étape.
 
 ![Première traduction sur T4 dans Colab avec lecteur audio et temps de génération de 8,57 secondes.](images/premiere-traduction-t4.png)
 
+## Deuxième exemple sur T4
+
+| Élément | Résultat observé |
+| --- | --- |
+| Phrase source | « No puedo llegar antes de las ocho. » |
+| Traduction de référence | « I can’t arrive before eight. » |
+| Traduction générée | « I can't get there before eight. » |
+| Temps de génération | 3,06 s sur T4, hors chargement du modèle |
+
+« I can't » conserve la négation et « before eight » conserve la limite
+horaire. Dans ce contexte, « get there » transmet la même idée que « arrive ».
+Ce deuxième essai illustre la fidélité du sens sur une autre phrase. Pour
+comparer les temps de deux configurations, on utilise le même fichier audio.
+
+![Deuxième traduction espagnol-anglais sur T4 avec lecteur audio et un temps de génération de 3,06 secondes.](images/deuxieme-traduction-t4.png)
+
 ## Sources de l’installation
 
 Les versions installées et les conflits proviennent des journaux pip.
