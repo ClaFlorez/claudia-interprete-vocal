@@ -16,6 +16,9 @@ Le français fera partie de la démonstration avec le modèle préentraîné.
 
 ## Données et évaluation
 
+
+**FLEURS** signifie *Few-shot Learning Evaluation of Universal Representations of Speech*. Ce jeu de données publié par Google contient des enregistrements de phrases équivalentes dans plusieurs langues. Pour l’ajustement fin de notre Transformer, chaque exemple associe un enregistrement en espagnol à sa traduction écrite en anglais. [Source des données](https://huggingface.co/datasets/google/fleurs)
+
 - **Entraînement et validation** — Enregistrements en espagnol et traductions
   écrites correspondantes en anglais, issus des partitions distinctes de FLEURS.
 - **Test final** — Six phrases originales en espagnol enregistrées à voix
