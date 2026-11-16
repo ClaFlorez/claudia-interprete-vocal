@@ -1,3 +1,5 @@
+**Langues :** [Français](README.md) · [Español](README.es.md)
+
 # CLAUD·IA — Interprète vocal trilingue
 
 Travail pratique de Machine Learning. Le projet traduit de courtes phrases
